@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suma</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>¡Bienvenido al Juego de Suma de <b>MateAventura!</b> </h1>
+        <p>¿Estás listo para sumar números?</p>
+    </header>
+    <main>
+        <section class="juego">
+            <div class="juego-card">
+                <h2>Suma</h2>
+                <p>¿Cuánto es <span id="numero1">0</span> + <span id="numero2">0</span>?</p>
+                <input type="number" id="respuesta" placeholder="Escribe tu respuesta">
+                <button onclick="verificarRespuesta()">Verificar</button>
+                <p id="resultado"></p>
+                <button onclick="nuevaPregunta()">Nueva Pregunta</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Mini Juegos Matemáticos</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

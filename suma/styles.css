@@ -26,6 +26,7 @@ header {
     flex-wrap: wrap;
     gap: 20px;
     padding: 20px;
+
 }
 
 .juego-card {
@@ -35,6 +36,7 @@ header {
     width: 200px;
     padding: 20px;
     transition: transform 0.3s;
+
 }
 
 .juego-card:hover {
