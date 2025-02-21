@@ -58,8 +58,16 @@ button:hover {
 footer {
     background-color: #333;
     color: white;
-    padding: 10px;
+    padding: 2px;
     position: fixed;
     bottom: 0;
     width: 100%;
+}
+
+.juego-card img {
+    width: 100%; /* Ajusta el ancho de la imagen al 100% del contenedor */
+    max-width: 300px; /* Máximo tamaño para evitar imágenes demasiado grandes */
+    display: block;
+    margin: 10px auto; /* Centrar la imagen */
+    border-radius: 10px; /* Esquinas redondeadas */
 }

@@ -15,17 +15,18 @@
         <section class="juego">
             <div class="juego-card">
                 <h2>Suma</h2>
-                <p>¿Cuánto es <span id="numero1">0</span> + <span id="numero2">0</span>?</p>
+                <p id="pregunta">Generando pregunta...</p>
                 <input type="number" id="respuesta" placeholder="Escribe tu respuesta">
-                <button onclick="verificarRespuesta()">Verificar</button>
+                <button id="btnVerificar">Verificar</button>
+                
                 <p id="resultado"></p>
-                <button onclick="nuevaPregunta()">Nueva Pregunta</button>
             </div>
         </section>
     </main>
     <footer>
         <p>&copy; 2025 Mini Juegos Matemáticos</p>
     </footer>
+    <button class="boton-regresar" onclick="window.location.href='../index.html';">Regresar</button>
     <script src="script.js"></script>
 </body>
 </html>

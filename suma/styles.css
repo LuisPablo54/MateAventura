@@ -20,28 +20,29 @@ header {
     padding: 20px;
 }
 
-.juegos {
+.juego {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 20px;
-
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    height: 50vh; /* Ocupa el 100% del alto de la pantalla */
 }
 
 .juego-card {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    width: 200px;
-    padding: 20px;
-    transition: transform 0.3s;
-
+    background-color: white; /* Fondo blanco para el cuadro */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
+    text-align: center; /* Centra el texto dentro del cuadro */
+    max-width: 400px; /* Ancho máximo del cuadro */
+    width: 100%; /* Ocupa el 100% del ancho disponible */
 }
+
 
 .juego-card:hover {
     transform: scale(1.05);
 }
+
+
 
 button {
     background-color: #4c6ef5;
@@ -64,4 +65,21 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+}
+
+.boton-regresar {
+    position: fixed;
+    bottom: 20px; 
+    right: 20px; 
+    background-color: red; 
+    color: white;
+    padding: 10px 20px;
+    border: none; 
+    border-radius: 5px;
+    cursor: pointer; 
+    font-size: 16px;
+}
+
+.boton-regresar:hover {
+    background-color: darkred; 
 }
