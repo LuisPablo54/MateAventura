@@ -68,18 +68,17 @@ footer {
 }
 
 .boton-regresar {
-    position: fixed;
-    bottom: 20px; 
-    right: 20px; 
+
     background-color: red; 
-    color: white;
-    padding: 10px 20px;
-    border: none; 
-    border-radius: 5px;
-    cursor: pointer; 
-    font-size: 16px;
+   
 }
 
 .boton-regresar:hover {
     background-color: darkred; 
+}
+
+@media (max-width: 400px) {
+    footer {
+        display: none;
+    }
 }
