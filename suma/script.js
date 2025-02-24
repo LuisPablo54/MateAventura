@@ -29,7 +29,7 @@ function evaluarRespuesta(respuesta) {
         respuestasCorrectasConsecutivas++;
         respuestasIncorrectasConsecutivas = 0;
         // Aumentar la dificultad después de 5 respuestas correctas consecutivas
-        if (respuestasCorrectasConsecutivas >= 5) {
+        if (respuestasCorrectasConsecutivas >= 6) {
             nivelDificultad = Math.min(nivelDificultad + 0.5, 3);
             respuestasCorrectasConsecutivas = 0;
         }

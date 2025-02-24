@@ -52,6 +52,7 @@ button {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+    
 }
 
 button:hover {
@@ -68,7 +69,7 @@ footer {
 }
 
 .boton-regresar {
-
+    margin-bottom: 10px;
     background-color: red; 
    
 }
@@ -81,4 +82,9 @@ footer {
     footer {
         display: none;
     }
+}
+
+input {
+    width: 70%; /* Se adapta mejor */
+    padding: 8px;
 }
