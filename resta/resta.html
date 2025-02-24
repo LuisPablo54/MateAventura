@@ -3,29 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resta</title>
+    <title>Suma</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <header>
-        <h1>¡Bienvenido al Juego de Resta de <b>MateAventura!</b> </h1>
-        <p>¿Preparado para probar tus habilidades restando números?</p>
+        
+        <h1>¡Bienvenido al Juego de Suma de <b>MateAventura!</b> </h1>
+        <p>¿Estás listo para sumar números?</p>
     </header>
     <main>
         <section class="juego">
             <div class="juego-card">
-                <h2>Resta</h2>
-                <p>¿Cuánto es <span id="numero1">0</span> - <span id="numero2">0</span>?</p>
+                <h2>Suma</h2>
+                <h3 id="pregunta">Generando pregunta...</h3>
                 <input type="number" id="respuesta" placeholder="Escribe tu respuesta">
-                <button onclick="verificarRespuesta()">Verificar</button>
+                
+                <button id="btnVerificar">Verificar</button>
+                
                 <p id="resultado"></p>
-                <button onclick="nuevaPregunta()">Nueva Pregunta</button>
+                
             </div>
         </section>
     </main>
+    <!-- Boton para regresar  -->
+    <button class="boton-regresar" onclick="window.location.href='../index.html';">Regresar</button>
     <footer>
         <p>&copy; 2025 Mini Juegos Matemáticos</p>
     </footer>
+    
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </body>
 </html>
