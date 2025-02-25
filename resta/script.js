@@ -67,7 +67,7 @@ function evaluarRespuesta(respuesta) {
         resultadoElemento.style.color = "red";
         respuestasIncorrectasConsecutivas++;
         respuestasCorrectasConsecutivas = 0;
-        sonidoIncorrecto.play(); // 
+        
 
         // Cambiar el personaje a triste 😢
         personaje.textContent = "😢";

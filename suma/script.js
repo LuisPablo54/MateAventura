@@ -46,23 +46,37 @@ function evaluarRespuesta(respuesta) {
     let inputRespuesta = document.getElementById("respuesta");
     
     if (parseInt(respuesta) === respuestaCorrecta) {
-        resultadoElemento.textContent = "¡Correcto!";
+        resultadoElemento.textContent = "¡Correcto! 🎉";
         resultadoElemento.style.color = "green";
         respuestasCorrectasConsecutivas++;
         respuestasIncorrectasConsecutivas = 0;
 
-        lanzarConfeti(); // 🎉 ¡Lanzar confeti al acertar!
+               // Efecto de animación en la pregunta
+        document.getElementById("pregunta").classList.add("rebote");
+        setTimeout(() => document.getElementById("pregunta").classList.remove("rebote"), 500);
 
+        // Cambiar el personaje a feliz 😃
+        personaje.textContent = "😃";
+
+        // Lanzar confeti
+        lanzarConfeti();
+        // Ganar una estrella cada 3 aciertos
+        if (respuestasCorrectasConsecutivas % 3 === 0) {
+            estrellas++;
+            document.getElementById("estrellas").textContent = `⭐ ${estrellas}`;
+        }
         // Aumentar la dificultad después de 5 respuestas correctas consecutivas
         if (respuestasCorrectasConsecutivas >= 6) {
             nivelDificultad = Math.min(nivelDificultad + 0.5, 3);
             respuestasCorrectasConsecutivas = 0;
         }
     } else {
-        resultadoElemento.textContent = "Incorrecto. Intenta de nuevo.";
+        resultadoElemento.textContent = "Incorrecto.  😢  Intenta de nuevo.";
         resultadoElemento.style.color = "red";
         respuestasIncorrectasConsecutivas++;
         respuestasCorrectasConsecutivas = 0;
+        // Cambiar el personaje a triste 😢
+        personaje.textContent = "😢";
 
         // Disminuir la dificultad después de 2 errores consecutivos
         if (respuestasIncorrectasConsecutivas >= 2) {
