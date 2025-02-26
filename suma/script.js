@@ -3,8 +3,9 @@ let nivelDificultad = 1; // Comienza con sumas de un dígito
 let tiempoInicio;
 let respuestasCorrectasConsecutivas = 0;
 let respuestasIncorrectasConsecutivas = 0;
+let estrellas = 0;
 function lanzarConfeti() {
-    var duration = 1 * 1000; // Duración de 2 segundos
+    var duration = 0.5 * 1000; // Duración de 0.5 segundos
     var end = Date.now() + duration;
 
     (function frame() {

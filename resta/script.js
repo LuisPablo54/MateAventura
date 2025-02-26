@@ -85,7 +85,7 @@ function evaluarRespuesta(respuesta) {
 
 // Función para lanzar confeti
 function lanzarConfeti() {
-    var duration = 2 * 1000;
+    var duration = 0.5 * 1000;
     var end = Date.now() + duration;
 
     (function frame() {
