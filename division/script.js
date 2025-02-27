@@ -1,10 +1,12 @@
 // Configuración inicial del juego
-let nivelDificultad = 1; // Comienza con sumas de un dígito
+let nivelDificultad = 1; // Comienza con divisiones de un dígito
 let tiempoInicio;
 let respuestasCorrectasConsecutivas = 0;
 let respuestasIncorrectasConsecutivas = 0;
+let estrellas = 0;
+
 function lanzarConfeti() {
-    var duration = 1 * 1000; // Duración de 2 segundos
+    var duration = 0.5 * 1000; // Duración de 0.5 segundos
     var end = Date.now() + duration;
 
     (function frame() {
@@ -27,18 +29,19 @@ function lanzarConfeti() {
     })();
 }
 
-// Función para generar una suma basada en la dificultad
-function generarSuma() {
-    let num1 = Math.floor(Math.random() * (10 ** nivelDificultad));
-    let num2 = Math.floor(Math.random() * (10 ** nivelDificultad));
+// Función para generar una división basada en la dificultad
+function generarDivision() {
+    let divisor = Math.floor(Math.random() * (9 * nivelDificultad)) + 1; // Evitar división entre 0
+    let resultado = Math.floor(Math.random() * (10 ** nivelDificultad));
+    let dividendo = divisor * resultado;
     
     tiempoInicio = Date.now(); // Guardamos el tiempo en que se genera la pregunta
     
-    document.getElementById("pregunta").textContent = `${num1} + ${num2} = ?`;
-    return num1 + num2;
+    document.getElementById("pregunta").textContent = `${dividendo} ÷ ${divisor} = ?`;
+    return resultado;
 }
 
-let respuestaCorrecta = generarSuma();
+let respuestaCorrecta = generarDivision();
 
 function evaluarRespuesta(respuesta) {
     let tiempoRespuesta = (Date.now() - tiempoInicio) / 1000; // Tiempo en segundos
@@ -46,25 +49,33 @@ function evaluarRespuesta(respuesta) {
     let inputRespuesta = document.getElementById("respuesta");
     
     if (parseInt(respuesta) === respuestaCorrecta) {
-        resultadoElemento.textContent = "¡Correcto!";
+        resultadoElemento.textContent = "¡Correcto! 🎉";
         resultadoElemento.style.color = "green";
         respuestasCorrectasConsecutivas++;
         respuestasIncorrectasConsecutivas = 0;
 
-        lanzarConfeti(); // 🎉 ¡Lanzar confeti al acertar!
+        document.getElementById("pregunta").classList.add("rebote");
+        setTimeout(() => document.getElementById("pregunta").classList.remove("rebote"), 500);
 
-        // Aumentar la dificultad después de 5 respuestas correctas consecutivas
+        personaje.textContent = "😃";
+        lanzarConfeti();
+
+        if (respuestasCorrectasConsecutivas % 3 === 0) {
+            estrellas++;
+            document.getElementById("estrellas").textContent = `⭐ ${estrellas}`;
+        }
+
         if (respuestasCorrectasConsecutivas >= 6) {
             nivelDificultad = Math.min(nivelDificultad + 0.5, 3);
             respuestasCorrectasConsecutivas = 0;
         }
     } else {
-        resultadoElemento.textContent = "Incorrecto. Intenta de nuevo.";
+        resultadoElemento.textContent = "Incorrecto. 😢 Intenta de nuevo.";
         resultadoElemento.style.color = "red";
         respuestasIncorrectasConsecutivas++;
         respuestasCorrectasConsecutivas = 0;
+        personaje.textContent = "😢";
 
-        // Disminuir la dificultad después de 2 errores consecutivos
         if (respuestasIncorrectasConsecutivas >= 2) {
             nivelDificultad = Math.max(nivelDificultad - 1, 1);
             respuestasIncorrectasConsecutivas = 0;
@@ -72,9 +83,8 @@ function evaluarRespuesta(respuesta) {
     }
     
     inputRespuesta.value = ""; // Borrar la respuesta ingresada
-    respuestaCorrecta = generarSuma();
+    respuestaCorrecta = generarDivision();
 }
-
 
 document.getElementById("btnVerificar").addEventListener("click", function() {
     let respuestaUsuario = document.getElementById("respuesta").value;
