@@ -3,32 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multiplicación</title>
+    <title>Restas</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <header>
         
-        <h1>¡Bienvenido al Juego de Multiplicación de <b>MateAventura!</b> </h1>
-        <p>¿Estás listo para multiplicar números?</p>
+        <h1>¡Bienvenido al Juego de Restas de <b>MateAventura!</b> </h1>
+        <p>¿Estás listo para restar números?</p>
     </header>
     <main>
         <section class="juego">
             <div class="juego-card">
-                <h2>Multiplicación</h2>
+                <h2>Resta:</h2>
                 <h3 id="pregunta">Generando pregunta...</h3>
                 <input type="number" id="respuesta" placeholder="Escribe tu respuesta">
                 
                 <button id="btnVerificar">Verificar</button>
                 
                 <p id="resultado"></p>
-                
+                <!-- 🏆 Sección de estrellas -->
+                <p>Estrellas: <span id="estrellas">⭐ 0</span></p>
+                <!-- 🎭 Personaje animado -->
+                <p id="personaje" style="font-size: 50px;">🤔</p>
+                <button class="boton-regresar" onclick="window.location.href='../index.html';">Regresar</button>
             </div>
         </section>
     </main>
     <!-- Boton para regresar  -->
-    <button class="boton-regresar" onclick="window.location.href='../index.html';">Regresar</button>
+    
     <footer>
         <p>&copy; 2025 Mini Juegos Matemáticos</p>
     </footer>
