@@ -4,6 +4,7 @@ let tiempoInicio;
 let respuestasCorrectasConsecutivas = 0;
 let respuestasIncorrectasConsecutivas = 0;
 let estrellas = 0;
+
 function lanzarConfeti() {
     var duration = 0.5 * 1000; // Duración de 0.5 segundos
     var end = Date.now() + duration;
@@ -28,7 +29,7 @@ function lanzarConfeti() {
     })();
 }
 
-// Función para generar una suma basada en la dificultad
+//Función para generar una suma basada en la dificultad
 function generarSuma() {
     let num1 = Math.floor(Math.random() * (10 ** nivelDificultad));
     let num2 = Math.floor(Math.random() * (10 ** nivelDificultad));
