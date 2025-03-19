@@ -98,3 +98,8 @@ input {
     50% { transform: translateY(-10px); }
     100% { transform: translateY(0); }
 }
+p {
+ 
+    line-height: 1.0em; 
+   
+}

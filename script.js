@@ -17,6 +17,4 @@ function iniciarJuego(tipoJuego) {
     else {
         alert('En desarrollo: ' + tipoJuego);
     }
-
-
 }

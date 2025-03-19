@@ -27,6 +27,27 @@ header {
     height: 70vh; /* Ocupa el 100% del alto de la pantalla */
 }
 
+.instrucciones {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    /* Espacio de la parte inferior */
+    margin-bottom: 20vh;
+    margin-top: 5vh;
+
+}
+
+.instrucciones-card {
+    background-color: #8fc9ff; /* Fondo blanco para el cuadro */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
+    text-align: center; /* Centra el texto dentro del cuadro */
+    max-width: 400px; /* Ancho máximo del cuadro */
+    width: 100%; /* Ocupa el 100% del ancho disponible */
+}
+
+
 .juego-card {
     background-color: white; /* Fondo blanco para el cuadro */
     padding: 20px; /* Espaciado interno */
@@ -97,4 +118,10 @@ input {
     0% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
     100% { transform: translateY(0); }
+}
+
+p {
+ 
+    line-height: 1.0em; 
+   
 }
