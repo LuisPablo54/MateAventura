@@ -1,3 +1,4 @@
+(function() {
 // Configuración inicial del juego
 let nivelDificultad = 1; // Controla el rango de los números generados
 let respuestasCorrectasConsecutivas = 0;
@@ -122,3 +123,4 @@ function lanzarConfeti() {
         }
     })();
 }
+})();

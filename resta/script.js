@@ -1,3 +1,4 @@
+(function() {
 // Configuración inicial del juego
 let nivelDificultad = 1;
 let tiempoInicio;
@@ -103,3 +104,4 @@ document.getElementById("btnVerificar").addEventListener("click", function() {
     let respuestaUsuario = document.getElementById("respuesta").value;
     evaluarRespuesta(respuestaUsuario);
 });
+})();
